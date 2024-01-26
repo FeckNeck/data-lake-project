@@ -1,0 +1,530 @@
+CREATE (n:Blog: User {
+	text_id: 3581210,
+	name: "Titouan",
+	gender: "male",
+	age: 33,
+	topic: "InvestmentBanking",
+	sign: "Aquarius",
+	date: "05/08/2004",
+	text: "I came across this in my daily readings of Korean news and sites...just trying to get a handle on this place. urlLink The anti-traditional Korean lady...holy crap, they look strong! And push-ups! More pics on urlLink the site (it's all in Korean, but no translation needed for the images. Now, I knew that Korean women are strong in spirit, but had not seen many like this. Most Korean men like their gals to be smaller, weaker (well, most guys do, it's just more prevalent here) so it takes real...um....balls for a gal to go into this sport. I don't mind it, myself. Maybe because even when muscle-bound Korean women still look relatively dainty--at least compared to their Western-lady body-building counterparts who start to look a little horsey."
+});
+CREATE (n:Transformation: language {text_id:3581210, value: "en"});
+match (b:Blog:User), (n:Transformation: language)
+where b.text_id = 3581210 AND n.text_id=3581210
+create (b)-[r:language]->(n);
+
+CREATE (n:Transformation: stopwords_removed {text_id:3581210, value: "I came across daily readings Korean news sites...just trying get handle place. urlLink The anti-traditional Korean lady...holy crap, look strong! And push-ups! More pics urlLink site (it's Korean, translation needed images. Now, I knew Korean women strong spirit, seen many like this. Most Korean men like gals smaller, weaker (well, guys do, prevalent here) takes real...um....balls gal go sport. I mind it, myself. Maybe even muscle-bound Korean women still look relatively dainty--at least compared Western-lady body-building counterparts start look little horsey."});
+match (b:Blog:User), (n:Transformation: stopwords_removed)
+where b.text_id = 3581210 AND n.text_id=3581210
+create (b)-[r:stopwords_removed]->(n);
+
+CREATE (n:Transformation: word_count {text_id:3581210, value: 81});
+match (sr:Transformation: stopwords_removed), (n:Transformation: word_count)
+where sr.text_id = 3581210 AND n.text_id=3581210
+create (sr)-[r:word_count]->(n);
+
+CREATE (n:Transformation: char_count {text_id:3581210, value: 487});
+match (sr:Transformation: stopwords_removed), (n:Transformation: char_count)
+where sr.text_id = 3581210 AND n.text_id=3581210
+create (sr)-[r:char_count]->(n);
+
+CREATE (n:Transformation: sentence_count {text_id:3581210, value: 20});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentence_count)
+where sr.text_id = 3581210 AND n.text_id=3581210
+create (sr)-[r:sentence_count]->(n);
+
+CREATE (n:Transformation: numerics {text_id:3581210, value: 0});
+match (sr:Transformation: stopwords_removed), (n:Transformation: numerics)
+where sr.text_id = 3581210 AND n.text_id=3581210
+create (sr)-[r:numerics]->(n);
+
+CREATE (n:Transformation: sentiment {text_id:3581210, value: 0.12});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentiment)
+where sr.text_id = 3581210 AND n.text_id=3581210
+create (sr)-[r:sentiment]->(n);
+
+CREATE (n:Transformation: subjectivity {text_id:3581210, value: 0.47});
+match (sr:Transformation: stopwords_removed), (n:Transformation: subjectivity)
+where sr.text_id = 3581210 AND n.text_id=3581210
+create (sr)-[r:subjectivity]->(n);
+
+
+
+
+CREATE (n:Blog: User {
+	text_id: 3539003,
+	name: "Anne",
+	gender: "female",
+	age: 14,
+	topic: "indUnk",
+	sign: "Aries",
+	date: "05/06/2004",
+	text: "Look at me. Look at my eyes. You see a tear. Now look into my eyes as I gaze aimlessly into yours. Grief, hope, anguish, love. I know you can see it all. We lock each other in a stare, trying to freeze us in this moment. A conversation passes between us, but no words are spoken. Unsure of what to do next, I run my fingers through your hair. Then we hug. This position once so odd now becomes the most comforting thing in my entire world. Then the bell rings. Yes... the bell. Once it was my savior and now I am betrayed by the bell. We stand hand in hand as the world goes on around us. I tell you I love you. You say it back. I weekly say good-bye. I walk away, only twenty steps away. I look back to see you watching me... A fading memory. I run back and kiss you. A perpetual kiss. When we part and walk away, the warmth remains on our lips. You take with you a huge part of my life. Not only do you have my entire heart, you have my first kiss too. Remember me fondly forever, because I will never forget you. I love you. Good-bye."
+});
+CREATE (n:Transformation: language {text_id:3539003, value: "en"});
+match (b:Blog:User), (n:Transformation: language)
+where b.text_id = 3539003 AND n.text_id=3539003
+create (b)-[r:language]->(n);
+
+CREATE (n:Transformation: stopwords_removed {text_id:3539003, value: "Look me. Look eyes. You see tear. Now look eyes I gaze aimlessly yours. Grief, hope, anguish, love. I know see all. We lock stare, trying freeze us moment. A conversation passes us, words spoken. Unsure next, I run fingers hair. Then hug. This position odd becomes comforting thing entire world. Then bell rings. Yes... bell. Once savior I betrayed bell. We stand hand hand world goes around us. I tell I love you. You say back. I weekly say good-bye. I walk away, twenty steps away. I look back see watching me... A fading memory. I run back kiss you. A perpetual kiss. When part walk away, warmth remains lips. You take huge part life. Not entire heart, first kiss too. Remember fondly forever, I never forget you. I love you. Good-bye."});
+match (b:Blog:User), (n:Transformation: stopwords_removed)
+where b.text_id = 3539003 AND n.text_id=3539003
+create (b)-[r:stopwords_removed]->(n);
+
+CREATE (n:Transformation: word_count {text_id:3539003, value: 133});
+match (sr:Transformation: stopwords_removed), (n:Transformation: word_count)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:word_count]->(n);
+
+CREATE (n:Transformation: char_count {text_id:3539003, value: 606});
+match (sr:Transformation: stopwords_removed), (n:Transformation: char_count)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:char_count]->(n);
+
+CREATE (n:Transformation: sentence_count {text_id:3539003, value: 35});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentence_count)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:sentence_count]->(n);
+
+CREATE (n:Transformation: numerics {text_id:3539003, value: 0});
+match (sr:Transformation: stopwords_removed), (n:Transformation: numerics)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:numerics]->(n);
+
+CREATE (n:Transformation: sentiment {text_id:3539003, value: 0.09});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentiment)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:sentiment]->(n);
+
+CREATE (n:Transformation: subjectivity {text_id:3539003, value: 0.36});
+match (sr:Transformation: stopwords_removed), (n:Transformation: subjectivity)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:subjectivity]->(n);
+
+
+
+
+CREATE (n:Blog: User {
+	text_id: 3539003,
+	name: "Anne",
+	gender: "female",
+	age: 14,
+	topic: "indUnk",
+	sign: "Aries",
+	date: "11/08/2004",
+	text: "You may be wondering why my site is called 'Spaghetti Wall'. It is a joke between me and some friends. We went on the Washington D.C. trip with my school. We were at a nice Italian restraunt and I got plain spaghetti noodles. One of my friends pointed out that if the noodles were cooked, they'd stick to the wall. She grabbed a handful and sure enough, the spaghetti stuck to the wall! For some reason, I couldn't pick the noodles off the wall with my fingers. I couldn't get a hold of them. What else could I do? I ate the spaghetti of the wall! Everybody though it was so funny! Do you remember the 'Spaghetti Wall'?"
+});
+CREATE (n:Transformation: language {text_id:3539003, value: "en"});
+match (b:Blog:User), (n:Transformation: language)
+where b.text_id = 3539003 AND n.text_id=3539003
+create (b)-[r:language]->(n);
+
+CREATE (n:Transformation: stopwords_removed {text_id:3539003, value: "You may wondering site called 'Spaghetti Wall'. It joke friends. We went Washington D.C. trip school. We nice Italian restraunt I got plain spaghetti noodles. One friends pointed noodles cooked, they'd stick wall. She grabbed handful sure enough, spaghetti stuck wall! For reason, I pick noodles wall fingers. I get hold them. What else could I do? I ate spaghetti wall! Everybody though funny! Do remember 'Spaghetti Wall'?"});
+match (b:Blog:User), (n:Transformation: stopwords_removed)
+where b.text_id = 3539003 AND n.text_id=3539003
+create (b)-[r:stopwords_removed]->(n);
+
+CREATE (n:Transformation: word_count {text_id:3539003, value: 68});
+match (sr:Transformation: stopwords_removed), (n:Transformation: word_count)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:word_count]->(n);
+
+CREATE (n:Transformation: char_count {text_id:3539003, value: 357});
+match (sr:Transformation: stopwords_removed), (n:Transformation: char_count)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:char_count]->(n);
+
+CREATE (n:Transformation: sentence_count {text_id:3539003, value: 10});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentence_count)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:sentence_count]->(n);
+
+CREATE (n:Transformation: numerics {text_id:3539003, value: 0});
+match (sr:Transformation: stopwords_removed), (n:Transformation: numerics)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:numerics]->(n);
+
+CREATE (n:Transformation: sentiment {text_id:3539003, value: 0.2});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentiment)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:sentiment]->(n);
+
+CREATE (n:Transformation: subjectivity {text_id:3539003, value: 0.62});
+match (sr:Transformation: stopwords_removed), (n:Transformation: subjectivity)
+where sr.text_id = 3539003 AND n.text_id=3539003
+create (sr)-[r:subjectivity]->(n);
+
+
+
+
+CREATE (n:Blog: User {
+	text_id: 4172416,
+	name: "Sheepy",
+	gender: "female",
+	age: 25,
+	topic: "indUnk",
+	sign: "Capricorn",
+	date: "08/08/2004",
+	text: "Election time has rolled around again. And everyone is spitting their venom at each other in hopes of impressing the public with their 'tact'. Um..what. Instead of pointing your greedy little fingers and accusing Mr So and So, why don't you do one better, and tell us what YOU'RE going to do for us. Im sick of hearing what he did, how badly they did it, or how they didnt but should have. Says YOU. I guess it isnt like anyone is bound to believe anything you white collared putzs have to say anywya. You always do the opposite. I've been trying to educate myself on the different political platforms to figure out which I can identify with most. Personally, for some, I think lying would gather more votes. Shit, no wonder the libertarians never make it into office. To blatantly state 'We should eliminate the entire social welfare system. This includes eliminating AFDC, food stamps, subsidized housing, and all the rest. Individuals who are unable to fully support themselves and their families through the job market must, once again, learn to rely on supportive family, church, community, or private charity to bridge the gap.' ...is a ballsy move. Oh? You thought that was it? Theres more: 'The bulk of your welfare tax dollars goes to pay the handsome salaries of well-educated welfare workers. The poor get little from government welfare except meager handouts and a cycle of despair.' Again...ummmm, what? So, let me get this right....government should stop paying the 'meager handouts' to families in need, and instead have those families go begging churches and charities for even smaller handouts..because...those 'meager' handouts are causing the moneywell to go dry? But hey, it's ok to throw cash at foreign countries and help THEIR people out. Who cares that most of them deteste the United States, and somewhere in their hearts pray for our annihilation. I bet those little bastards setting our flag on fire and stomping all over it after 9/11, aren't aware that our money covered their birth. Nothing better than paying for the future of terrorism. Maybe i'm taking this personally, as I should. Because without the ever so popular 'welfare system'. My mother and myself might have suffered. Blah. I can see you all thinking that your precious greens have in some way helped me become the fine young woman I am today. BZZZZZZZT. Think again. The sum of monies my mother received could be accounted for with taxes paid out from my immediate family alone. She could have been on welfare for another 20 years, and technically, taxes paid by my extended families would have covered it. So i'll just thank them, and give you the middle finger for being arrogant enough to think that you have had any impact on my families financial prosperity. And now the shoe is on the other foot, or however it goes, and my taxes are paying for your sisters-mothers-best-friends-brother-nieces illegitimate kids. And to ease your silent curiousity, my mother is now a very successful businesswoman. So suck my tampon string. Here is another Liberal issue, surely the cure to the nations healtcare AND war on drugs. Let's just legalise it!!! It's typical of the liberal party to promote the legalisation of drugs isn't it. I mean, for their stance on issues alone, they have to be smoking or snorting something. The liberals take on anything seems to be 'We can't control it so lets just legalise it and save ourselves the time and money it would take to correct it.' If you see it that way, you're a plain idiot. Does rehabiliation not cost money? Do damages not cost money? Ok, give some kid easy access to some pot, so they can fall asleep at the wheel and crash into a building. Or kill someone. 'Drugs should be legal. Individuals have the right to decide for themselves what to put in their bodies, so long as they take responsibility for their actions.' Ok, well when these users are irresponsible and their actions endanger other people, .. THEN WHAT? Let me guess, have their parents bear the responsibility. Riiight. 'Addicts out of control were a tiny minority.' Um...So was obesity. See how thats change. And food IS legal! I can almost picture it...1972, after a demonstration on public sex, and the art of smoking pot through your girlfriends vagina, a group of teenage dropouts were arrested and spent a night in jail where they concocted this notion that if everything were legalised, the standard of their living would be improved and fuck consequences of drug induced peoples, fuck work performance, fuck cost of consequences, fuck everyone else. And the liberal party was formed."
+});
+CREATE (n:Transformation: language {text_id:4172416, value: "en"});
+match (b:Blog:User), (n:Transformation: language)
+where b.text_id = 4172416 AND n.text_id=4172416
+create (b)-[r:language]->(n);
+
+CREATE (n:Transformation: stopwords_removed {text_id:4172416, value: "Election time rolled around again. And everyone spitting venom hopes impressing public 'tact'. Um..what. Instead pointing greedy little fingers accusing Mr So So, one better, tell us YOU'RE going us. Im sick hearing did, badly it, didnt have. Says YOU. I guess isnt like anyone bound believe anything white collared putzs say anywya. You always opposite. I've trying educate different political platforms figure I identify most. Personally, some, I think lying would gather votes. Shit, wonder libertarians never make office. To blatantly state 'We eliminate entire social welfare system. This includes eliminating AFDC, food stamps, subsidized housing, rest. Individuals unable fully support families job market must, again, learn rely supportive family, church, community, private charity bridge gap.' ...is ballsy move. Oh? You thought it? Theres more: 'The bulk welfare tax dollars goes pay handsome salaries well-educated welfare workers. The poor get little government welfare except meager handouts cycle despair.' Again...ummmm, what? So, let get right....government stop paying 'meager handouts' families need, instead families go begging churches charities even smaller handouts..because...those 'meager' handouts causing moneywell go dry? But hey, ok throw cash foreign countries help THEIR people out. Who cares deteste United States, somewhere hearts pray annihilation. I bet little bastards setting flag fire stomping 9/11, aware money covered birth. Nothing better paying future terrorism. Maybe i'm taking personally, I should. Because without ever popular 'welfare system'. My mother might suffered. Blah. I see thinking precious greens way helped become fine young woman I today. BZZZZZZZT. Think again. The sum monies mother received could accounted taxes paid immediate family alone. She could welfare another 20 years, technically, taxes paid extended families would covered it. So i'll thank them, give middle finger arrogant enough think impact families financial prosperity. And shoe foot, however goes, taxes paying sisters-mothers-best-friends-brother-nieces illegitimate kids. And ease silent curiousity, mother successful businesswoman. So suck tampon string. Here another Liberal issue, surely cure nations healtcare AND war drugs. Let's legalise it!!! It's typical liberal party promote legalisation drugs it. I mean, stance issues alone, smoking snorting something. The liberals take anything seems 'We can't control lets legalise save time money would take correct it.' If see way, plain idiot. Does rehabiliation cost money? Do damages cost money? Ok, give kid easy access pot, fall asleep wheel crash building. Or kill someone. 'Drugs legal. Individuals right decide put bodies, long take responsibility actions.' Ok, well users irresponsible actions endanger people, .. THEN WHAT? Let guess, parents bear responsibility. Riiight. 'Addicts control tiny minority.' Um...So obesity. See thats change. And food IS legal! I almost picture it...1972, demonstration public sex, art smoking pot girlfriends vagina, group teenage dropouts arrested spent night jail concocted notion everything legalised, standard living would improved fuck consequences drug induced peoples, fuck work performance, fuck cost consequences, fuck everyone else. And liberal party formed."});
+match (b:Blog:User), (n:Transformation: stopwords_removed)
+where b.text_id = 4172416 AND n.text_id=4172416
+create (b)-[r:stopwords_removed]->(n);
+
+CREATE (n:Transformation: word_count {text_id:4172416, value: 467});
+match (sr:Transformation: stopwords_removed), (n:Transformation: word_count)
+where sr.text_id = 4172416 AND n.text_id=4172416
+create (sr)-[r:word_count]->(n);
+
+CREATE (n:Transformation: char_count {text_id:4172416, value: 2827});
+match (sr:Transformation: stopwords_removed), (n:Transformation: char_count)
+where sr.text_id = 4172416 AND n.text_id=4172416
+create (sr)-[r:char_count]->(n);
+
+CREATE (n:Transformation: sentence_count {text_id:4172416, value: 76});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentence_count)
+where sr.text_id = 4172416 AND n.text_id=4172416
+create (sr)-[r:sentence_count]->(n);
+
+CREATE (n:Transformation: numerics {text_id:4172416, value: 1});
+match (sr:Transformation: stopwords_removed), (n:Transformation: numerics)
+where sr.text_id = 4172416 AND n.text_id=4172416
+create (sr)-[r:numerics]->(n);
+
+CREATE (n:Transformation: sentiment {text_id:4172416, value: 0.01});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentiment)
+where sr.text_id = 4172416 AND n.text_id=4172416
+create (sr)-[r:sentiment]->(n);
+
+CREATE (n:Transformation: subjectivity {text_id:4172416, value: 0.47});
+match (sr:Transformation: stopwords_removed), (n:Transformation: subjectivity)
+where sr.text_id = 4172416 AND n.text_id=4172416
+create (sr)-[r:subjectivity]->(n);
+
+
+
+
+CREATE (n:Blog: User {
+	text_id: 4030905,
+	name: "Michelle",
+	gender: "female",
+	age: 17,
+	topic: "Student",
+	sign: "Aries",
+	date: "30/07/2004",
+	text: "Such a boring day. I have no comments. I found out that I'm the shortest girl in my class. Had very healthy food today. I shall not mention what they are. Cos I can't be bothered to do so right now."
+});
+CREATE (n:Transformation: language {text_id:4030905, value: "en"});
+match (b:Blog:User), (n:Transformation: language)
+where b.text_id = 4030905 AND n.text_id=4030905
+create (b)-[r:language]->(n);
+
+CREATE (n:Transformation: stopwords_removed {text_id:4030905, value: "Such boring day. I comments. I found I'm shortest girl class. Had healthy food today. I shall mention are. Cos I can't bothered right now."});
+match (b:Blog:User), (n:Transformation: stopwords_removed)
+where b.text_id = 4030905 AND n.text_id=4030905
+create (b)-[r:stopwords_removed]->(n);
+
+CREATE (n:Transformation: word_count {text_id:4030905, value: 25});
+match (sr:Transformation: stopwords_removed), (n:Transformation: word_count)
+where sr.text_id = 4030905 AND n.text_id=4030905
+create (sr)-[r:word_count]->(n);
+
+CREATE (n:Transformation: char_count {text_id:4030905, value: 114});
+match (sr:Transformation: stopwords_removed), (n:Transformation: char_count)
+where sr.text_id = 4030905 AND n.text_id=4030905
+create (sr)-[r:char_count]->(n);
+
+CREATE (n:Transformation: sentence_count {text_id:4030905, value: 7});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentence_count)
+where sr.text_id = 4030905 AND n.text_id=4030905
+create (sr)-[r:sentence_count]->(n);
+
+CREATE (n:Transformation: numerics {text_id:4030905, value: 0});
+match (sr:Transformation: stopwords_removed), (n:Transformation: numerics)
+where sr.text_id = 4030905 AND n.text_id=4030905
+create (sr)-[r:numerics]->(n);
+
+CREATE (n:Transformation: sentiment {text_id:4030905, value: -0.05});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentiment)
+where sr.text_id = 4030905 AND n.text_id=4030905
+create (sr)-[r:sentiment]->(n);
+
+CREATE (n:Transformation: subjectivity {text_id:4030905, value: 0.63});
+match (sr:Transformation: stopwords_removed), (n:Transformation: subjectivity)
+where sr.text_id = 4030905 AND n.text_id=4030905
+create (sr)-[r:subjectivity]->(n);
+
+
+
+
+CREATE (n:Blog: User {
+	text_id: 3705830,
+	name: "Jacko",
+	gender: "male",
+	age: 25,
+	topic: "Non-Profit",
+	sign: "Cancer",
+	date: "23/06/2004",
+	text: "in a moment of clarity i looked up the tablature for 'tightrope', by the stone roses. a truly beautiful wonderful song, and one that i have every intention of playing at some point when the mysterious 'band' gets together. acoustic singalongs were never so cool: are we etched in stone, or just scratched in the sand waiting for the waves to come and reclaim the land? and then, in a moment of complete insanity, i looked up the tablature for 'good times', by the stone roses. why? delusions of adequacy, and nothing more. oh my good god, there is no way i will ever ever learn to play that. [aside: i probably could, but it would need to be a full-time job and i'm fairly sure no-one's going to pay me for that, alas.] i get as far as 0:26 and then its into the main riff and i've no space to fit all those notes in. it brings up the issue of 'the second coming', though, which is a vastly underrated album in my opinion. to have those two completely different songs next to each other and to have it work is an indication of something, even if five years is a long time to wait. definitely worth having; good summer guitar tunes. disregarding the rain, that is. interesting fact: on the set of '24 hour party people', i met the fake john squire - that is, the actor playing john squire in the film. and yet, he doesn't appear in the film at all. shame; he had good john squire hair. presumably left on the cutting room floor... n."
+});
+CREATE (n:Transformation: language {text_id:3705830, value: "en"});
+match (b:Blog:User), (n:Transformation: language)
+where b.text_id = 3705830 AND n.text_id=3705830
+create (b)-[r:language]->(n);
+
+CREATE (n:Transformation: stopwords_removed {text_id:3705830, value: "moment clarity looked tablature 'tightrope', stone roses. truly beautiful wonderful song, one every intention playing point mysterious 'band' gets together. acoustic singalongs never cool: etched stone, scratched sand waiting waves come reclaim land? then, moment complete insanity, looked tablature 'good times', stone roses. why? delusions adequacy, nothing more. oh good god, way ever ever learn play that. [aside: probably could, would need full-time job i'm fairly sure no-one's going pay that, alas.] get far 0:26 main riff i've space fit notes in. brings issue 'the second coming', though, vastly underrated album opinion. two completely different songs next work indication something, even five years long time wait. definitely worth having; good summer guitar tunes. disregarding rain, is. interesting fact: set '24 hour party people', met fake john squire - is, actor playing john squire film. yet, appear film all. shame; good john squire hair. presumably left cutting room floor... n."});
+match (b:Blog:User), (n:Transformation: stopwords_removed)
+where b.text_id = 3705830 AND n.text_id=3705830
+create (b)-[r:stopwords_removed]->(n);
+
+CREATE (n:Transformation: word_count {text_id:3705830, value: 149});
+match (sr:Transformation: stopwords_removed), (n:Transformation: word_count)
+where sr.text_id = 3705830 AND n.text_id=3705830
+create (sr)-[r:word_count]->(n);
+
+CREATE (n:Transformation: char_count {text_id:3705830, value: 848});
+match (sr:Transformation: stopwords_removed), (n:Transformation: char_count)
+where sr.text_id = 3705830 AND n.text_id=3705830
+create (sr)-[r:char_count]->(n);
+
+CREATE (n:Transformation: sentence_count {text_id:3705830, value: 19});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentence_count)
+where sr.text_id = 3705830 AND n.text_id=3705830
+create (sr)-[r:sentence_count]->(n);
+
+CREATE (n:Transformation: numerics {text_id:3705830, value: 0});
+match (sr:Transformation: stopwords_removed), (n:Transformation: numerics)
+where sr.text_id = 3705830 AND n.text_id=3705830
+create (sr)-[r:numerics]->(n);
+
+CREATE (n:Transformation: sentiment {text_id:3705830, value: 0.22});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentiment)
+where sr.text_id = 3705830 AND n.text_id=3705830
+create (sr)-[r:sentiment]->(n);
+
+CREATE (n:Transformation: subjectivity {text_id:3705830, value: 0.6});
+match (sr:Transformation: stopwords_removed), (n:Transformation: subjectivity)
+where sr.text_id = 3705830 AND n.text_id=3705830
+create (sr)-[r:subjectivity]->(n);
+
+
+
+
+CREATE (n:Blog: User {
+	text_id: 4120194,
+	name: "Walibi",
+	gender: "female",
+	age: 17,
+	topic: "Arts",
+	sign: "Aries",
+	date: "18/08/2004",
+	text: "Well today was eventful... in an everyday sort of way. I woke up this morning and decided to get my shopping for my trip over with so I'm not doing it last minute. I drag Ryden along to the mall with me and we look for a bathing suit. After about 30 minutes of searching today and about 3 weeks before hand we finally find one that we both agree on. Isn't it pathetic that we both have to agree on clothes before we buy them. I value his opinion on what I wear the most because he's the only one I dress for and try to look good for. So the bathing suit it purchased... and it was on sale yay!! and we walk through the mall and i buy a top and a purse. By the way it's taken me all summer to find a purse that I actually like. I've never even owned a purse before and it was getting to the point where I had so much shit to carry around that I decided I really needed one. I'm very picky on this subject because I personally don't like purses all that much (hence why i've never owned one) but after about 2 months I FINALLY found one I like. So shopping was then over. We head back home and sit down after 5 hours of wandering the mall, and watched the movie 'A Beautiful Mind'. This is now my favorite movie, next to 'Pirates Of The Carribean'.... I loved 'A Beautiful Mind' it's a truly amazing movie... wow. So after that we all went out to dinner, cause it was Whitney's birthday... the big one five. We went to Boston Pizza and it was really fun... Later on at Ryden's, he gives me this poem/piece of writing that he wrote about me. I would post it on here but i dont know if he would want me to... anyways i loved it ... it was cute. And thats all the news today"
+});
+CREATE (n:Transformation: language {text_id:4120194, value: "en"});
+match (b:Blog:User), (n:Transformation: language)
+where b.text_id = 4120194 AND n.text_id=4120194
+create (b)-[r:language]->(n);
+
+CREATE (n:Transformation: stopwords_removed {text_id:4120194, value: "Well today eventful... everyday sort way. I woke morning decided get shopping trip I'm last minute. I drag Ryden along mall look bathing suit. After 30 minutes searching today 3 weeks hand finally find one agree on. Isn't pathetic agree clothes buy them. I value opinion I wear he's one I dress try look good for. So bathing suit purchased... sale yay!! walk mall buy top purse. By way taken summer find purse I actually like. I've never even owned purse getting point I much shit carry around I decided I really needed one. I'm picky subject I personally like purses much (hence i've never owned one) 2 months I FINALLY found one I like. So shopping over. We head back home sit 5 hours wandering mall, watched movie 'A Beautiful Mind'. This favorite movie, next 'Pirates Of The Carribean'.... I loved 'A Beautiful Mind' truly amazing movie... wow. So went dinner, cause Whitney's birthday... big one five. We went Boston Pizza really fun... Later Ryden's, gives poem/piece writing wrote me. I would post dont know would want to... anyways loved ... cute. And thats news today"});
+match (b:Blog:User), (n:Transformation: stopwords_removed)
+where b.text_id = 4120194 AND n.text_id=4120194
+create (b)-[r:stopwords_removed]->(n);
+
+CREATE (n:Transformation: word_count {text_id:4120194, value: 187});
+match (sr:Transformation: stopwords_removed), (n:Transformation: word_count)
+where sr.text_id = 4120194 AND n.text_id=4120194
+create (sr)-[r:word_count]->(n);
+
+CREATE (n:Transformation: char_count {text_id:4120194, value: 890});
+match (sr:Transformation: stopwords_removed), (n:Transformation: char_count)
+where sr.text_id = 4120194 AND n.text_id=4120194
+create (sr)-[r:char_count]->(n);
+
+CREATE (n:Transformation: sentence_count {text_id:4120194, value: 42});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentence_count)
+where sr.text_id = 4120194 AND n.text_id=4120194
+create (sr)-[r:sentence_count]->(n);
+
+CREATE (n:Transformation: numerics {text_id:4120194, value: 4});
+match (sr:Transformation: stopwords_removed), (n:Transformation: numerics)
+where sr.text_id = 4120194 AND n.text_id=4120194
+create (sr)-[r:numerics]->(n);
+
+CREATE (n:Transformation: sentiment {text_id:4120194, value: 0.2});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentiment)
+where sr.text_id = 4120194 AND n.text_id=4120194
+create (sr)-[r:sentiment]->(n);
+
+CREATE (n:Transformation: subjectivity {text_id:4120194, value: 0.54});
+match (sr:Transformation: stopwords_removed), (n:Transformation: subjectivity)
+where sr.text_id = 4120194 AND n.text_id=4120194
+create (sr)-[r:subjectivity]->(n);
+
+
+
+
+CREATE (n:Blog: User {
+	text_id: 913315,
+	name: "Cimboo",
+	gender: "male",
+	age: 25,
+	topic: "Communications-Media",
+	sign: "Aquarius",
+	date: "29/06/2004",
+	text: "Technical Difficulties....to the Extreme! The recent lack of posts is due to a serious computer malfunction. It seems as if I need a complete overhaul, so things may be sporatic for a little while. Luckily, a good friend let me use his computer to put this up. On a happier note, I went to see urlLink The Ponys at Spaceland last night...FOR FREE. So to all you sucks who paid to see them at the Troubadour tonight, I'm better than you. Not that I wouldn't pay to see this band. They were great fun. The lead singer is like a really tall pogo stick, and the lead guitar looks like Andy Warhol (and he makes silly faces when the lead singer does something weird), there are two other people two, but they didn't do anything crazy that merits mentioning. They're a little indie rock band straight out of Chicago and the album has a cool cover too. So you should get it, so that they can pay their rent and make more music for you to listen to, since I'm obviously not helping any. Although I did tell them to 'go on with their bad selves' and I do beleive they took it to heart, and will remember that moment when they think they just can't go on any more. And remembering that will cause them to continue. urlLink Really bad phone camera photo of The Ponys at Spaceland.&nbsp; urlLink"
+});
+CREATE (n:Transformation: language {text_id:913315, value: "en"});
+match (b:Blog:User), (n:Transformation: language)
+where b.text_id = 913315 AND n.text_id=913315
+create (b)-[r:language]->(n);
+
+CREATE (n:Transformation: stopwords_removed {text_id:913315, value: "Technical Difficulties....to Extreme! The recent lack posts due serious computer malfunction. It seems I need complete overhaul, things may sporatic little while. Luckily, good friend let use computer put up. On happier note, I went see urlLink The Ponys Spaceland last night...FOR FREE. So sucks paid see Troubadour tonight, I'm better you. Not I pay see band. They great fun. The lead singer like really tall pogo stick, lead guitar looks like Andy Warhol (and makes silly faces lead singer something weird), two people two, anything crazy merits mentioning. They're little indie rock band straight Chicago album cool cover too. So get it, pay rent make music listen to, since I'm obviously helping any. Although I tell 'go bad selves' I beleive took heart, remember moment think can't go more. And remembering cause continue. urlLink Really bad phone camera photo The Ponys Spaceland.&nbsp; urlLink"});
+match (b:Blog:User), (n:Transformation: stopwords_removed)
+where b.text_id = 913315 AND n.text_id=913315
+create (b)-[r:stopwords_removed]->(n);
+
+CREATE (n:Transformation: word_count {text_id:913315, value: 144});
+match (sr:Transformation: stopwords_removed), (n:Transformation: word_count)
+where sr.text_id = 913315 AND n.text_id=913315
+create (sr)-[r:word_count]->(n);
+
+CREATE (n:Transformation: char_count {text_id:913315, value: 758});
+match (sr:Transformation: stopwords_removed), (n:Transformation: char_count)
+where sr.text_id = 913315 AND n.text_id=913315
+create (sr)-[r:char_count]->(n);
+
+CREATE (n:Transformation: sentence_count {text_id:913315, value: 21});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentence_count)
+where sr.text_id = 913315 AND n.text_id=913315
+create (sr)-[r:sentence_count]->(n);
+
+CREATE (n:Transformation: numerics {text_id:913315, value: 0});
+match (sr:Transformation: stopwords_removed), (n:Transformation: numerics)
+where sr.text_id = 913315 AND n.text_id=913315
+create (sr)-[r:numerics]->(n);
+
+CREATE (n:Transformation: sentiment {text_id:913315, value: -0.01});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentiment)
+where sr.text_id = 913315 AND n.text_id=913315
+create (sr)-[r:sentiment]->(n);
+
+CREATE (n:Transformation: subjectivity {text_id:913315, value: 0.51});
+match (sr:Transformation: stopwords_removed), (n:Transformation: subjectivity)
+where sr.text_id = 913315 AND n.text_id=913315
+create (sr)-[r:subjectivity]->(n);
+
+
+
+
+CREATE (n:Blog: User {
+	text_id: 1877178,
+	name: "Rudolphe",
+	gender: "male",
+	age: 16,
+	topic: "Student",
+	sign: "Taurus",
+	date: "01/04/2004",
+	text: "Never butt in to a conversation half way through it. Bad things will happen. Very bad things!"
+});
+CREATE (n:Transformation: language {text_id:1877178, value: "en"});
+match (b:Blog:User), (n:Transformation: language)
+where b.text_id = 1877178 AND n.text_id=1877178
+create (b)-[r:language]->(n);
+
+CREATE (n:Transformation: stopwords_removed {text_id:1877178, value: "Never butt conversation half way it. Bad things happen. Very bad things!"});
+match (b:Blog:User), (n:Transformation: stopwords_removed)
+where b.text_id = 1877178 AND n.text_id=1877178
+create (b)-[r:stopwords_removed]->(n);
+
+CREATE (n:Transformation: word_count {text_id:1877178, value: 12});
+match (sr:Transformation: stopwords_removed), (n:Transformation: word_count)
+where sr.text_id = 1877178 AND n.text_id=1877178
+create (sr)-[r:word_count]->(n);
+
+CREATE (n:Transformation: char_count {text_id:1877178, value: 61});
+match (sr:Transformation: stopwords_removed), (n:Transformation: char_count)
+where sr.text_id = 1877178 AND n.text_id=1877178
+create (sr)-[r:char_count]->(n);
+
+CREATE (n:Transformation: sentence_count {text_id:1877178, value: 3});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentence_count)
+where sr.text_id = 1877178 AND n.text_id=1877178
+create (sr)-[r:sentence_count]->(n);
+
+CREATE (n:Transformation: numerics {text_id:1877178, value: 0});
+match (sr:Transformation: stopwords_removed), (n:Transformation: numerics)
+where sr.text_id = 1877178 AND n.text_id=1877178
+create (sr)-[r:numerics]->(n);
+
+CREATE (n:Transformation: sentiment {text_id:1877178, value: -0.62});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentiment)
+where sr.text_id = 1877178 AND n.text_id=1877178
+create (sr)-[r:sentiment]->(n);
+
+CREATE (n:Transformation: subjectivity {text_id:1877178, value: 0.57});
+match (sr:Transformation: stopwords_removed), (n:Transformation: subjectivity)
+where sr.text_id = 1877178 AND n.text_id=1877178
+create (sr)-[r:subjectivity]->(n);
+
+
+
+
+CREATE (n:Blog: User {
+	text_id: 1107146,
+	name: "Buzzbee",
+	gender: "female",
+	age: 16,
+	topic: "Student",
+	sign: "Libra",
+	date: "25/05/2003",
+	text: "right i still don't think your mom likes me."
+});
+CREATE (n:Transformation: language {text_id:1107146, value: "en"});
+match (b:Blog:User), (n:Transformation: language)
+where b.text_id = 1107146 AND n.text_id=1107146
+create (b)-[r:language]->(n);
+
+CREATE (n:Transformation: stopwords_removed {text_id:1107146, value: "right still think mom likes me."});
+match (b:Blog:User), (n:Transformation: stopwords_removed)
+where b.text_id = 1107146 AND n.text_id=1107146
+create (b)-[r:stopwords_removed]->(n);
+
+CREATE (n:Transformation: word_count {text_id:1107146, value: 6});
+match (sr:Transformation: stopwords_removed), (n:Transformation: word_count)
+where sr.text_id = 1107146 AND n.text_id=1107146
+create (sr)-[r:word_count]->(n);
+
+CREATE (n:Transformation: char_count {text_id:1107146, value: 26});
+match (sr:Transformation: stopwords_removed), (n:Transformation: char_count)
+where sr.text_id = 1107146 AND n.text_id=1107146
+create (sr)-[r:char_count]->(n);
+
+CREATE (n:Transformation: sentence_count {text_id:1107146, value: 2});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentence_count)
+where sr.text_id = 1107146 AND n.text_id=1107146
+create (sr)-[r:sentence_count]->(n);
+
+CREATE (n:Transformation: numerics {text_id:1107146, value: 0});
+match (sr:Transformation: stopwords_removed), (n:Transformation: numerics)
+where sr.text_id = 1107146 AND n.text_id=1107146
+create (sr)-[r:numerics]->(n);
+
+CREATE (n:Transformation: sentiment {text_id:1107146, value: 0.29});
+match (sr:Transformation: stopwords_removed), (n:Transformation: sentiment)
+where sr.text_id = 1107146 AND n.text_id=1107146
+create (sr)-[r:sentiment]->(n);
+
+CREATE (n:Transformation: subjectivity {text_id:1107146, value: 0.54});
+match (sr:Transformation: stopwords_removed), (n:Transformation: subjectivity)
+where sr.text_id = 1107146 AND n.text_id=1107146
+create (sr)-[r:subjectivity]->(n);
+
+
+
+

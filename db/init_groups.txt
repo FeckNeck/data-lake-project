@@ -1,0 +1,38 @@
+CREATE(n:Group:has_numbers);
+CREATE(n:Group:en);
+CREATE(n:Group:is_positive);
+CREATE(n:Group:is_subjective);
+
+match (n : has_numbers), (e : numerics)
+where e.value > 0
+create (n)-[:yes]->(e);
+
+match (n : has_numbers), (e : numerics)
+where e.value = 0
+create (n)-[:no]->(e);
+
+match (n : en), (l : language)
+where l.value = 'en'
+create (n)-[:yes]->(l);
+
+match (n : is_positive), (e : sentiment)
+where e.value > 0
+create (n)-[:yes]->(e);
+
+match (n : is_positive), (e : sentiment)
+where e.value < 0
+create (n)-[:no]->(e);
+
+match (n : is_subjective), (e : subjectivity)
+where e.value > 0
+create (n)-[:yes]->(e);
+
+match (n : is_subjective), (e : subjectivity)
+where e.value = 0
+create (n)-[:no]->(e);
+
+
+create (n:Grouping);
+
+match (n : Grouping), (e : Group)
+create (n)-[:has]->(e);

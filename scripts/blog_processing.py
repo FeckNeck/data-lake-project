@@ -7,7 +7,7 @@ from nltk.corpus import stopwords
 from textblob import TextBlob
 
 # Read the data
-df = pd.read_csv('./data.csv', delimiter='\t')
+df = pd.read_csv('../data/data.csv', delimiter='\t')
 
 print(df.head())
 
