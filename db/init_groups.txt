@@ -4,31 +4,31 @@ CREATE(n:Group:is_positive);
 CREATE(n:Group:is_subjective);
 
 match (n : has_numbers), (e : numerics)
-where e.value > 0
+where e.numerics_value > 0
 create (n)-[:yes]->(e);
 
 match (n : has_numbers), (e : numerics)
-where e.value = 0
+where e.numerics_value = 0
 create (n)-[:no]->(e);
 
 match (n : en), (l : language)
-where l.value = 'en'
+where l.language_value = 'en'
 create (n)-[:yes]->(l);
 
 match (n : is_positive), (e : sentiment)
-where e.value > 0
+where e.sentiment_value > 0
 create (n)-[:yes]->(e);
 
 match (n : is_positive), (e : sentiment)
-where e.value < 0
+where e.sentiment_value < 0
 create (n)-[:no]->(e);
 
 match (n : is_subjective), (e : subjectivity)
-where e.value > 0
+where e.subjectivity_value > 0
 create (n)-[:yes]->(e);
 
 match (n : is_subjective), (e : subjectivity)
-where e.value = 0
+where e.subjectivity_value = 0
 create (n)-[:no]->(e);
 
 

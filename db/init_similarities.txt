@@ -1,32 +1,32 @@
 match (l1: language), (l2 : language)
-where l1.value = l2.value and ID(l1) <> ID(l2)
+where l1.language_value = l2.language_value and ID(l1) <> ID(l2)
 create (l1)-[:similar]->(l2);
 
 match (s1: stopwords_removed), (s2 : stopwords_removed)
-where s1.value contains s2.value and ID(s1) <> ID(s2)
+where s1.stopwords_removed_value contains s2.stopwords_removed_value and ID(s1) <> ID(s2)
 create (s1)-[:similar]->(s2);
 
 match (w1: word_count), (w2 : word_count)
-where w1.value = w2.value and ID(w1) <> ID(w2)
+where w1.word_count_value = w2.word_count_value and ID(w1) <> ID(w2)
 create (w1)-[:similar]->(w2);
 
 match (c1: char_count), (c2 : char_count)
-where c1.value = c2.value and ID(c1) <> ID(c2)
+where c1.char_count_value = c2.char_count_value and ID(c1) <> ID(c2)
 create (c1)-[:similar]->(c2);
 
 match (s1: sentence_count), (s2 : sentence_count)
-where s1.value = s2.value and ID(s1) <> ID(s2)
+where s1.sentence_count_value = s2.sentence_count_value and ID(s1) <> ID(s2)
 create (s1)-[:similar]->(s2);
 
 match (n1: numerics), (n2 : numerics)
-where ((n1.value > 0 and n2.value > 0) or (n1.value = 0 and n2.value = 0)) and ID(n1) <> ID(n2)
+where ((n1.numerics_value > 0 and n2.numerics_value > 0) or (n1.numerics_value = 0 and n2.numerics_value = 0)) and ID(n1) <> ID(n2)
 create (n1)-[:similar]->(n2);
 
 match (s1: sentiment), (s2 : sentiment)
-where ((s1.value > 0 and s2.value > 0) or (s1.value < 0 and s2.value < 0)) and ID(s1) <> ID(s2)
+where ((s1.sentiment_value > 0 and s2.sentiment_value > 0) or (s1.sentiment_value < 0 and s2.sentiment_value < 0)) and ID(s1) <> ID(s2)
 create (s1)-[:similar]->(s2);
 
 match (s1: subjectivity), (s2 : subjectivity)
-where ((s1.value > 0 and s2.value > 0) or (s1.value = 0 and s2.value = 0)) and ID(s1) <> ID(s2)
+where ((s1.subjectivity_value > 0 and s2.subjectivity_value > 0) or (s1.subjectivity_value = 0 and s2.subjectivity_value = 0)) and ID(s1) <> ID(s2)
 create (s1)-[:similar]->(s2);
 

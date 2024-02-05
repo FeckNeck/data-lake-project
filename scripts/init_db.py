@@ -42,12 +42,12 @@ with open('./db/init_db.txt', 'w') as f:
         f.write(f'}});\n')
         for transformation in TRANSFORMATIONS:
             if transformation in ['language', 'stopwords_removed']:
-                f.write(f'CREATE (n:Transformation: {transformation} {{text_id:{row["id"]}, value: "{row[transformation]}"}});\n')
+                f.write(f'CREATE (n:Transformation: {transformation} {{text_id:{row["id"]}, {transformation}_value: "{row[transformation]}"}});\n')
                 f.write(f'match (b:Blog:User), (n:Transformation: {transformation})\n')
                 f.write(f'where b.text_id = {row["id"]} AND n.text_id={row["id"]}\n')
                 f.write(f'create (b)-[r:{transformation}]->(n);\n\n')
             else:
-                f.write(f'CREATE (n:Transformation: {transformation} {{text_id:{row["id"]}, value: {row[transformation]}}});\n')
+                f.write(f'CREATE (n:Transformation: {transformation} {{text_id:{row["id"]}, {transformation}_value: {row[transformation]}}});\n')
                 f.write(f'match (sr:Transformation: stopwords_removed), (n:Transformation: {transformation})\n')
                 f.write(f'where sr.text_id = {row["id"]} AND n.text_id={row["id"]}\n')
                 f.write(f'create (sr)-[r:{transformation}]->(n);\n\n')
